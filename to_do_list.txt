@@ -1,0 +1,82 @@
+## 🚀 Week 1 — Development Roadmap
+
+**Goal:** Set up the backend, connect PostgreSQL, implement core APIs, and push a working version to GitHub.
+
+### 📅 Day 1 — Development Environment Setup
+- [ ] Install [Node.js](https://nodejs.org/) and verify with `node --version`
+- [ ] Install [Visual Studio Code](https://code.visualstudio.com/)
+- [ ] Install [PostgreSQL](https://www.postgresql.org/) and [pgAdmin](https://www.pgadmin.org/)
+- [ ] Install [Git](https://git-scm.com/) and verify with `git --version`
+- [ ] Create a [GitHub](https://github.com/) account and initialize the SAFAR repository
+- [ ] Create accounts on [Railway](https://railway.com/) and [Vercel](https://vercel.com/) for future deployment
+- [ ] Review [Gupshup](https://www.gupshup.io/) and [MSG91](https://msg91.com/) for OTP delivery
+- [ ] Verify that all tools are installed and working
+
+### 📅 Day 2 — Backend Initialization
+- [ ] Create the `safar/backend/` directory
+- [ ] Initialize the Node.js project using `npm init -y`
+- [ ] Install required dependencies: `express`, `pg`, `dotenv`, `cors`, `bcrypt`, and `jsonwebtoken`
+- [ ] Install development dependencies such as `nodemon`
+- [ ] Create the initial `server.js` file
+- [ ] Configure Express and a basic health-check endpoint
+- [ ] Start the server on port `5000`
+- [ ] Verify `http://localhost:5000` returns `SAFAR API is running 🚀`
+- [ ] Add `.gitignore` and exclude `node_modules/` and `.env`
+
+### 📅 Day 3 — PostgreSQL Database Setup
+- [ ] Create the `safar_db` database in pgAdmin
+- [ ] Design the database schema for users, vehicles, rides, bookings, and related entities
+- [ ] Create and execute the SQL schema file
+- [ ] Verify that all 9 expected tables are created
+- [ ] Define primary keys, foreign keys, constraints, and indexes
+- [ ] Verify relationships between database tables
+- [ ] Save the schema as `database/schema.sql`
+
+### 📅 Day 4 — Backend and Database Integration
+- [ ] Create the `.env` file with database connection settings
+- [ ] Configure environment variables for the database and JWT
+- [ ] Create `db.js` using the PostgreSQL connection pool
+- [ ] Connect PostgreSQL to the Express application
+- [ ] Add a `GET /test-db` endpoint
+- [ ] Test the database connection and handle connection errors
+- [ ] Verify the endpoint returns `{ "success": true }`
+- [ ] Confirm that secrets are not committed to GitHub
+
+### 📅 Days 5–6 — Core API Development
+- [ ] Create `middleware/auth.js` for authentication and authorization
+- [ ] Implement owner registration and OTP request APIs
+- [ ] Implement OTP verification and JWT generation
+- [ ] Create `routes/owner.js` for owner-related operations
+- [ ] Create `routes/cars.js` for vehicle registration and listing
+- [ ] Create `routes/drivers.js` for driver-related operations
+- [ ] Create `routes/students.js` for student profiles and operations
+- [ ] Register all route modules in `server.js`
+- [ ] Add request validation and consistent error responses
+- [ ] Test successful requests and invalid-input scenarios
+
+### 📅 Day 7 — API Testing and GitHub Milestone
+- [ ] Install Thunder Client in VS Code
+- [ ] Test OTP request and verification flows
+- [ ] Test JWT-protected endpoints
+- [ ] Test vehicle registration
+- [ ] Test listing available vehicles
+- [ ] Verify database records are created and retrieved correctly
+- [ ] Fix bugs and verify server stability
+- [ ] Document API endpoints and example requests
+- [ ] Create a `README.md` with setup instructions
+- [ ] Commit and push the working backend to GitHub
+
+### ✅ Week 1 Definition of Done
+- [ ] Backend starts successfully on localhost
+- [ ] PostgreSQL connection works
+- [ ] All 9 database tables are created
+- [ ] Authentication flow is tested
+- [ ] Vehicle registration and listing APIs work
+- [ ] Protected endpoints reject unauthorized requests
+- [ ] Environment secrets are excluded from version control
+- [ ] README contains installation and testing instructions
+- [ ] Code is pushed to GitHub
+
+**Week 1 milestone:** A functional backend foundation for SAFAR, ready for frontend integration and further ride-booking features.
+
+> **Security note:** Use a unique local database password and keep API keys, JWT secrets, and OTP provider credentials in `.env`. Never commit real credentials to GitHub.
